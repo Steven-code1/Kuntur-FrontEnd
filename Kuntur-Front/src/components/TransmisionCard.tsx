@@ -26,18 +26,11 @@ const TransmisionCard = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 50, 
+    marginBottom: 5, 
     marginTop: 20, 
     width: "100%",
     height: 280, 
     alignSelf: 'center', 
-  },
-  container2: {
-    flex: 1,
-    marginBottom: 300,
-    top: 25,
-    width: "100%",
-    height: 100, 
   },
 });
 

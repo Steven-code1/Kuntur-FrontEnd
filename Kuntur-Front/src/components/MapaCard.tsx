@@ -77,7 +77,7 @@ const ProcesoCard = () => {
 
 const styles = StyleSheet.create({
   card: {
-    minHeight: 400,// Altura card
+    minHeight: 450,// Altura card
     margin: 10,
   },
   title: {
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   map: {
     //flex: 1,
     width: "100%",
-    height: 500, // Altura del mapa
+    height: 450, // Altura del mapa
     borderRadius: 10,
   },
 });

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Image, Button } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Card } from "react-native-paper";
 
@@ -103,13 +103,6 @@ const Proceso = () => {
       </View>
 
       <Card style={styles.card}>
-        <View>
-          <View style={styles.titulo}>
-            <Text style={{ fontWeight: "bold", fontSize: 20 }}>
-              Descripción
-            </Text>
-          </View>
-        </View>
         <ProcesoCard descripcion={descripcionDelBackendPoli} />
       </Card>
 
@@ -123,13 +116,6 @@ const Proceso = () => {
       </View>
 
       <Card style={styles.card}>
-        <View>
-          <View style={styles.titulo}>
-            <Text style={{ fontWeight: "bold", fontSize: 20 }}>
-              Descripción
-            </Text>
-          </View>
-        </View>
         <ProcesoCard descripcion={descripcionDelBackendSen} />
       </Card>
     </LinearGradient>
@@ -145,7 +131,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 12,
+
   },
   logo: {
     //top: 10,
@@ -155,15 +141,15 @@ const styles = StyleSheet.create({
   },
   logo2: {
     //top: 10,
-    width: 150,
-    height: 150,
+    width: 130,
+    height: 130,
     resizeMode: "contain",
   },
 
   titleSection: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 0,
+    marginBottom: 10,
   },
   title: {
     fontSize: 15,

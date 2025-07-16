@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Button,
+  ScrollView,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Card } from "react-native-paper";
 
-import MapaCard from "../components/MapaCard";
+import MonitorCard from "../components/MonitorCard";
 
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
-const Mapa = () => {
+const Monitor = () => {
   return (
     <LinearGradient
       colors={["#74409B", "#384c81"]}
@@ -16,38 +23,43 @@ const Mapa = () => {
       style={styles.fullScreenContainer} // <-- Nuevo estilo para el LinearGradient
     >
       {/* Envuelve el contenido que puede desbordarse en un ScrollView */}
-      <ScrollView contentContainerStyle={styles.scrollViewContent} style={styles.scrollView}>
-
+      <ScrollView
+        contentContainerStyle={styles.scrollViewContent}
+        style={styles.scrollView}
+      >
         {/* Logos */}
-      <View style={styles.logoSection}>
-        <Image
-          source={require("../../assets/encabezado1.png")}
-          style={styles.logo}
-        />
-        <Image
-          source={require("../../assets/encabezado2.png")}
-          style={styles.logo2}
-        />
-        <Image
-          source={require("../../assets/encabezado3.png")}
-          style={styles.logo}
-        />
-      </View>
+        <View style={styles.logoSection}>
+          <Image
+            source={require("../../assets/encabezado1.png")}
+            style={styles.logo}
+          />
+          <Image
+            source={require("../../assets/encabezado2.png")}
+            style={styles.logo2}
+          />
+          <Image
+            source={require("../../assets/encabezado3.png")}
+            style={styles.logo}
+          />
+        </View>
 
-      <View style={styles.titleSection}>
-        <MaterialCommunityIcons name="map-marker" size={24} color="white" />
-        <Text style={styles.title}>  Puntos de acceso Kuntur</Text>
-      </View>
+        <View style={styles.titleSection}>
+          <MaterialCommunityIcons name="map-marker" size={24} color="white" />
+          <Text style={styles.title}>
+            {" "}
+            Gilberto gato Sobral y Gaspar de Carvajal
+          </Text>
+        </View>
 
-      <MapaCard/>
-
-    </ScrollView>
+        <MonitorCard />
+      </ScrollView>
     </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
-  fullScreenContainer: { // estilo para que el gradiente ocupe toda la pantalla
+  fullScreenContainer: {
+    // estilo para que el gradiente ocupe toda la pantalla
     flex: 1,
   },
   scrollView: {
@@ -80,12 +92,11 @@ const styles = StyleSheet.create({
     height: 130,
     resizeMode: "contain",
   },
-
   titleSection: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 20,
+    //marginBottom: 15,
   },
   title: {
     fontSize: 15,
@@ -94,8 +105,8 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    marginTop: 12,
-    margin: 10,
+    //marginTop: 5,
+    //margin: 10,
   },
 
   titulo: {
@@ -106,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Mapa;
+export default Monitor;

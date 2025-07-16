@@ -5,9 +5,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 // Importa tus pantallas de la aplicación
-import Proceso from "./Screens/Proceso";
+import Monitor from "./Screens/Monitor";
 import Transmision from "./Screens/Transmision";
-
+import Resumen from "./Screens/Resumen";
+import Proceso from "./Screens/Proceso";
 import Mapa from "./Screens/Mapa";
 
 
@@ -21,12 +22,22 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Transmision"
-      //initialRouteName="ActivarKuntur"
+      initialRouteName="Monitor"
       screenOptions={{
         tabBarActiveTintColor: "purple",
       }}
     >
+      <Tab.Screen
+        name="Monitor"
+        component={Monitor}
+        options={{
+          headerShown: false,
+          tabBarLabel: "Monitor",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="eye" size={24} color={color} />
+          ),
+        }}
+      />
       <Tab.Screen
         name="Transmision"
         component={Transmision}
@@ -35,6 +46,17 @@ function MyTabs() {
           tabBarLabel: "Transmisión",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="wifi" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Resumen"
+        component={Resumen}
+        options={{
+          headerShown: false,
+          tabBarLabel: "Resumen",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="video" size={24} color={color} />
           ),
         }}
       />
