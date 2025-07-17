@@ -10,13 +10,9 @@ export default function VideoCard() {
       <Video
         source={videoSource}
         style={styles.video}
-        useNativeControls // Esto proporciona controles de reproducción/pausa, volumen, pantalla completa
-        resizeMode="contain" // O "cover", "stretch"
-        isLooping // Si quieres que el video se repita
-        // Puedes añadir más propiedades como:
-        // shouldPlay
-        // onLoad
-        // onError
+        useNativeControls 
+        resizeMode={ResizeMode.CONTAIN}
+        isLooping 
       />
       
     </View>
